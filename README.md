@@ -1,5 +1,9 @@
+# [DANGER, WIP!] Not tested on iOS, API in development
 
 # react-native-doorbell
+---
+
+An unofficial React Native SDK wrapper for the [Doorbell.io](https://doorbell.io) user feedback platform.
 
 ## Getting started
 
@@ -37,9 +41,9 @@
 
 ## Usage
 ```javascript
-import RNDoorbell from 'react-native-doorbell';
+import Doorbell from 'react-native-doorbell';
 
-// TODO: What to do with the module?
-RNDoorbell;
+const doorbellDialog = new Doorbell(APP_ID, API_KEY);
+doorbellDialog.show();
 ```
   
