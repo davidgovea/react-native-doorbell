@@ -32,5 +32,6 @@ repositories {
 
 dependencies {
     compile 'com.facebook.react:react-native:+'
+    compile 'io.doorbell:android-sdk:0.2.8@aar'
 }
   
