@@ -5,6 +5,8 @@ import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.Callback;
+import io.doorbell.android.Doorbell;
+import android.app.Activity;
 
 public class RNDoorbellModule extends ReactContextBaseJavaModule {
 
@@ -18,5 +20,11 @@ public class RNDoorbellModule extends ReactContextBaseJavaModule {
   @Override
   public String getName() {
     return "RNDoorbell";
+  }
+
+  @ReactMethod
+  public void show(int appId, String apiKey/*, final Promise promise */) {
+    Activity currentActivity = getCurrentActivity();
+    new Doorbell(currentActivity, appId, apiKey).show();
   }
 }
