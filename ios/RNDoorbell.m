@@ -10,9 +10,9 @@
 }
 RCT_EXPORT_MODULE();
 
-RCT_EXPORT_METHOD(show:(NSString *)appId location:(NSString *)doorbellWithApiKey)
+RCT_EXPORT_METHOD(show:(NSString *)appId apiKey:(NSString *)apiKey)
 {
-    Doorbell *feedback = [Doorbell doorbellWithApiKey:appKey appId:appId];
+    Doorbell *feedback = [Doorbell doorbellWithApiKey:apiKey appId:appId];
     [feedback showFeedbackDialogInViewController:self completion:^(NSError *error, BOOL isCancelled) {
         if (error) {
             NSLog(@"%@", error.localizedDescription);
