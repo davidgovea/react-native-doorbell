@@ -10,8 +10,8 @@
   "keywords": [
     "react-native"
   ],
-  "author": "",
-  "license": "",
+  "author": "David Govea <david@govea.tech>",
+  "license": "WTFPL",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
