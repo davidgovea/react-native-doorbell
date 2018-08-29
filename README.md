@@ -44,6 +44,18 @@ An unofficial React Native SDK wrapper for the [Doorbell.io](https://doorbell.io
 import Doorbell from 'react-native-doorbell';
 
 const doorbellDialog = new Doorbell(APP_ID, API_KEY);
+
 doorbellDialog.show();
+
+// or..
+
+doorbellDialog.show({
+  email: 'User email', // optional
+  name: 'User name', // optional
+  hideEmailField: true, // optional, default false
+  hidePoweredBy: true, // optional, default false
+  properties: {
+    customProperty: 'value', // optional custom properties
+  }
+});
 ```
-  
