@@ -14,6 +14,7 @@ import com.facebook.react.bridge.WritableMap;
 import io.doorbell.android.Doorbell;
 import android.app.Activity;
 import android.view.View;
+import java.util.Objects;
 
 public class RNDoorbellModule extends ReactContextBaseJavaModule {
 
@@ -41,31 +42,31 @@ public class RNDoorbellModule extends ReactContextBaseJavaModule {
       String key = iterator.nextKey();
       ReadableType type = options.getType(key);
 
-      if (key == "email") {
+      if (Objects.equals(key, "email")) {
         doorbellDialog.setEmail(options.getString(key));
-      } else if (key == "name") {
+      } else if (Objects.equals(key, "name")) {
         doorbellDialog.setName(options.getString(key));
-      } else if (key == "hideEmailField" && options.getBoolean(key) == true) {
+      } else if (Objects.equals(key, "hideEmailField") && options.getBoolean(key) == true) {
         doorbellDialog.setEmailFieldVisibility(View.GONE);
-      } else if (key == "hidePoweredBy" && options.getBoolean(key) == true) {
-        doorbellDialog.setEmailFieldVisibility(View.GONE);
-      } else if (key == "properties") {
+      } else if (Objects.equals(key, "hidePoweredBy") && options.getBoolean(key) == true) {
+        doorbellDialog.setPoweredByVisibility(View.GONE);
+      } else if (Objects.equals(key, "properties")) {
         ReadableMap properties = options.getMap(key);
         ReadableMapKeySetIterator propertyIterator = properties.keySetIterator();
         while (propertyIterator.hasNextKey()) {
-          String propertyName = propertyIterator.getNextKey();
-          ReadableType type = propertyIterator.getType(key);
+          String propertyName = propertyIterator.nextKey();
+          ReadableType propertyType = options.getType(key);
 
           // Accept String/Bool/Number custom props. TODO - consider int?
-          switch (type) {
+          switch (propertyType) {
             case Boolean:
-              doorbellDialog.addProperty(propertyName, readableMap.getBoolean(key));
+              doorbellDialog.addProperty(propertyName, properties.getBoolean(key));
               break;
             case Number:
-              doorbellDialog.addProperty(propertyName, readableMap.getDouble(key));
+              doorbellDialog.addProperty(propertyName, properties.getDouble(key));
               break;
             case String:
-              doorbellDialog.addProperty(propertyName, readableMap.getString(key));
+              doorbellDialog.addProperty(propertyName, properties.getString(key));
               break;
           }
         }
