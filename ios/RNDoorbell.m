@@ -24,7 +24,7 @@ RCT_EXPORT_METHOD(show:(NSString *)appId apiKey:(NSString *)apiKey options:(NSDi
         feedback.showEmail = false; // TODO - actually check option val
       } else if ([key isEqualToString:@"hidePoweredBy"]) {
         feedback.showPoweredBy = false; // TODO - actually check option val
-      } else if ([key isEqualToString:@"hidePoweredBy"]) {
+      } else if ([key isEqualToString:@"properties"]) {
         NSDictionary *properties = [options objectForKey:key];
         for (id propertyName in properties) {
           [feedback addPropertyWithName:propertyName AndValue:[properties objectForKey:propertyName]];
