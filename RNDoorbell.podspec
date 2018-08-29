@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "RNDoorbell"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "RNDoorbell"
   s.description  = <<-DESC
                   Unofficial React Native SDK Wrapper for Doorbell.io
@@ -19,4 +19,3 @@ Pod::Spec.new do |s|
   s.dependency "Doorbell", "~> 0.1.2"
 
 end
-

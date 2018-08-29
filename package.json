@@ -1,7 +1,7 @@
 
 {
   "name": "react-native-doorbell",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Unofficial Doorbell.io SDK wrapper for react-native",
   "main": "index.js",
   "types": "index.d.ts",
@@ -13,6 +13,8 @@
   ],
   "author": "David Govea <david@govea.tech>",
   "license": "WTFPL",
+  "repository": "github:davidgovea/react-native-doorbell.git",
+  "homepage": "https://github.com/davidgovea/react-native-doorbell",
   "peerDependencies": {
     "react-native": "^0.41.2"
   }
