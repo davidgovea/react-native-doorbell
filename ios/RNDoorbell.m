@@ -17,9 +17,9 @@ RCT_EXPORT_METHOD(show:(NSString *)appId apiKey:(NSString *)apiKey options:(NSDi
 
     for (id key in options) {
       if ([key isEqualToString:@"email"]) {
-        feedback.email = [options objectForKey:key]
+        feedback.email = [options objectForKey:key];
       } else if ([key isEqualToString:@"name"]) {
-        feedback.name = [options objectForKey:key]
+        feedback.name = [options objectForKey:key];
       } else if ([key isEqualToString:@"hideEmailField"]) {
         feedback.showEmail = false; // TODO - actually check option val
       } else if ([key isEqualToString:@"hidePoweredBy"]) {
