@@ -1,3 +1,4 @@
+/// <reference path="index.d.ts"/>
 import { NativeModules } from 'react-native';
 
 const { RNDoorbell } = NativeModules;
@@ -8,8 +9,8 @@ export class Doorbell {
     this.apiKey = apiKey;
   }
 
-  show() {
-    RNDoorbell.show(this.appId, this.apiKey);
+  show(options = {}) {
+    RNDoorbell.show(this.appId, this.apiKey, options);
   }
 };
 
